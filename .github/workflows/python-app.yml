@@ -45,7 +45,7 @@ jobs:
           path: backend/coverage.xml
       - name: boot
         run : |
-          python scripts/dev.py &
+          python -m app &
           sleep 3
           curl --fail http://localhost:8000/health
 
