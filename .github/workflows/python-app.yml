@@ -28,7 +28,7 @@ jobs:
           python -m compileall .
       - name: Lint cu Ruff
         run: |
-          pipx install ruff
+          pip install ruff
           ruff check .
       - name: pytest
         run: |
@@ -54,13 +54,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*' 
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
       - name: Lint
-        run: lint
+        run: npm run lint
       - name: Type-check
-        run: tsc
+        run: npx tsc
       - name: VITest
-        run: vitest
+        run: npx vitest run
       - name: Build
-        run: build
+        run: npm run build
