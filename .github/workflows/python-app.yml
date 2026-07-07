@@ -44,6 +44,7 @@ jobs:
           name: backend-coverage-report
           path: backend/coverage.xml
       - name: boot
+        working-directory: backend
         run : |
           python -m app &
           sleep 3
