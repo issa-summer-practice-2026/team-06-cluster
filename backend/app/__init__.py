@@ -11,7 +11,7 @@ logic (``from app.cluster import ...``) never requires the web framework.
 import os
 from pathlib import Path
 
-__all__ = ["create_app"
+__all__ = ["create_app"]
 
 # Default location of the built frontend (``frontend/dist`` at the repo root),
 # relative to this file: backend/app/__init__.py -> repo root.
