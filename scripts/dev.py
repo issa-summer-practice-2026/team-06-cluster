@@ -78,7 +78,7 @@ def cmd_setup(_args: argparse.Namespace) -> None:
     run([venv_python(), "-m", "pip", "install", "--upgrade", "pip"], cwd=ROOT)
     run([venv_python(), "-m", "pip", "install", "-r", "dev-requirements.txt"], cwd=BACKEND)
     run([require("npm"), "install"], cwd=FRONTEND)
-    print("\n[dev.py] setup complete. Next:  python scripts/dev.py dev\n")
+    print("\n[dev.py] setup complete. Next:  python scripts/dev.py dev\n"
 
 
 def cmd_build(_args: argparse.Namespace) -> None:
