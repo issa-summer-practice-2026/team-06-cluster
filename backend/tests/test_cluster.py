@@ -44,8 +44,8 @@ class TestGaugeFraction:
 
     def test_degenerate_range_is_zero(self):
         assert gauge_fraction(5, 10, 10) == 0.0
-    def test_oil_lit_from_toggle(self):
-        assert compute_telltales(RawInput(oil=True))["oil"] is True
+
+   
 
 class TestGearDisplay:
     @pytest.mark.parametrize("gear", ["P", "R", "N", "D", "1", "3", "6"])
@@ -106,6 +106,9 @@ class TestTelltales:
     def test_default_is_all_off(self):
         t = compute_telltales(RawInput())
         assert not any(t.values())
+
+    def test_oil_lit_from_toggle(self):
+        assert compute_telltales(RawInput(oil=True))["oil"] is True
 
 
 class TestDeriveState:
