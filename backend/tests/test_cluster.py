@@ -16,8 +16,6 @@ from app.cluster import (
     gear_display,
 )
 
-def test_oil_lit_from_toggle(self):
-    assert compute_telltales(RawInput(oil=True))["oil"] is True
 
 def test_clamp():
     assert clamp(5, 0, 10) == 5
@@ -46,7 +44,8 @@ class TestGaugeFraction:
 
     def test_degenerate_range_is_zero(self):
         assert gauge_fraction(5, 10, 10) == 0.0
-
+    def test_oil_lit_from_toggle(self):
+        assert compute_telltales(RawInput(oil=True))["oil"] is True
 
 class TestGearDisplay:
     @pytest.mark.parametrize("gear", ["P", "R", "N", "D", "1", "3", "6"])

@@ -42,6 +42,7 @@ _BOOL_FIELDS: frozenset[str] = frozenset(
     }
 )
 
+
 _SIGNAL_ACTIONS: frozenset[str] = frozenset({"left", "right", "hazard", "off"})
 
 # Turn signal + hazard form ONE mutually-exclusive mode, each mapping to the
