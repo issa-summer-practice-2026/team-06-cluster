@@ -22,6 +22,8 @@ def test_clamp():
     assert clamp(-1, 0, 10) == 0
     assert clamp(11, 0, 10) == 10
 
+def test_oil_lit_from_toggle():
+        assert compute_telltales(RawInput(oil=True))["oil"] is True
 
 class TestGaugeFraction:
     def test_zero_at_min(self):
@@ -107,8 +109,7 @@ class TestTelltales:
         t = compute_telltales(RawInput())
         assert not any(t.values())
 
-    def test_oil_lit_from_toggle(self):
-        assert compute_telltales(RawInput(oil=True))["oil"] is True
+    
 
 
 class TestDeriveState:
