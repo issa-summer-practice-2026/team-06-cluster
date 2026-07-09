@@ -37,7 +37,7 @@ jobs:
         working-directory: backend
         run: |
           pip install pytest pytest-cov
-          pytest --cov=./ --cov-report=xml
+          pytest --cov=./ --cov-report=xml --cov-fail-under=80
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
