@@ -25,6 +25,9 @@ def test_clamp():
 def test_oil_lit_from_toggle():
         assert compute_telltales(RawInput(oil=True))["oil"] is True
 
+def test_oil_lit_from_toggle():
+        assert compute_telltales(RawInput(oil=True))["oil"] is True
+
 class TestGaugeFraction:
     def test_zero_at_min(self):
         assert gauge_fraction(0, 0, 100) == 0.0
