@@ -117,7 +117,7 @@ jobs:
 
       - name: Set up Version Tag
         id: versioning
-        run: echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_ENV
+        run: echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
       - name: Build and Push to GHCR
         uses: docker/build-push-action@v5
@@ -126,13 +126,13 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/cluster:latest
-            ghcr.io/${{ github.repository_owner }}/cluster:${{ env.VERSION }}
+            ghcr.io/${{ github.repository_owner }}/cluster:${{ steps.versioning.outputs.version }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.VERSION }}
-          name: Release ${{ env.VERSION }}
+          tag_name: ${{ steps.versioning.outputs.version }}
+          name: Release ${{ steps.versioning.outputs.version }}
           generate_release_notes: true 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
