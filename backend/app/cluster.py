@@ -61,7 +61,7 @@ class RawInput:
     high_beam: bool = False
     check_engine: bool = False
     battery: bool = False
-    oil: bool = False #t1miercuri
+    oil: bool = False
     bulb_out: bool = False  # lights the bulb-failure telltale; also the hyper-flash packet's seam
     odometer_km: float = 12000.0
 
