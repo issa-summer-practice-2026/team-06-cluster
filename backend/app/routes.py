@@ -79,7 +79,6 @@ def register_routes(app, store, frontend_dist) -> None:
     # ---- operational ----------------------------------------------------
     @app.get("/health")
     def health():
-        raise Exception("Simulated Production Crash!")
         return jsonify({"status": "ok"})
 
     @app.get("/version")
